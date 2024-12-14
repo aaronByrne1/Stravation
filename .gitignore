@@ -1,0 +1,32 @@
+# Xcode
+DerivedData/
+*.xcworkspace/
+xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+# Swift Package Manager
+.build/
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Archives
+*.xcarchive
+
+# Env Variables
+.env

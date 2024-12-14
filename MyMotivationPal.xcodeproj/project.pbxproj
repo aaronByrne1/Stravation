@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		928DB56C2D08F36B0094A172 /* DiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB56B2D08F36B0094A172 /* DiscoveredDevice.swift */; };
+		928DB56E2D08F3BB0094A172 /* HeartRateDeviceSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB56D2D08F3BB0094A172 /* HeartRateDeviceSelectionView.swift */; };
+		928DB57E2D09FF590094A172 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 928DB57D2D09FF590094A172 /* Auth */; };
+		928DB5802D09FF590094A172 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 928DB57F2D09FF590094A172 /* Functions */; };
+		928DB5822D09FF590094A172 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 928DB5812D09FF590094A172 /* PostgREST */; };
+		928DB5842D09FF590094A172 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 928DB5832D09FF590094A172 /* Realtime */; };
+		928DB5862D09FF590094A172 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 928DB5852D09FF590094A172 /* Storage */; };
+		928DB5882D09FF590094A172 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 928DB5872D09FF590094A172 /* Supabase */; };
+		928DB58B2D0A007D0094A172 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB58A2D0A007D0094A172 /* Supabase.swift */; };
+		928DB58D2D0A00E40094A172 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB58C2D0A00E40094A172 /* AuthView.swift */; };
+		928DB58F2D0A01060094A172 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB58E2D0A01060094A172 /* ProfileView.swift */; };
+		928DB5912D0A01270094A172 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5902D0A01270094A172 /* Models.swift */; };
+		928DB5932D0A03000094A172 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5922D0A03000094A172 /* RootView.swift */; };
+		928DB5952D0A050D0094A172 /* AuthenticatedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5942D0A050D0094A172 /* AuthenticatedMainView.swift */; };
+		928DB5982D0A2B090094A172 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5972D0A2B090094A172 /* LoginView.swift */; };
+		928DB59A2D0A2B1F0094A172 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5992D0A2B1F0094A172 /* MainTabView.swift */; };
+		928DB59C2D0A2B390094A172 /* MotivatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB59B2D0A2B390094A172 /* MotivatorView.swift */; };
+		928DB59E2D0A2B4F0094A172 /* PublicRunsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB59D2D0A2B4F0094A172 /* PublicRunsView.swift */; };
+		928DB5A02D0AB1950094A172 /* RunViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB59F2D0AB1950094A172 /* RunViewModel.swift */; };
+		928DB5A22D0B91BA0094A172 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5A12D0B91BA0094A172 /* OpenAIService.swift */; };
+		928DB5A42D0CDF610094A172 /* ElevenLabsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5A32D0CDF610094A172 /* ElevenLabsService.swift */; };
+		928DB5A62D0CDFB70094A172 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5A52D0CDFB70094A172 /* AudioPlayer.swift */; };
+		928DB5A82D0DF6280094A172 /* MKMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5A72D0DF6280094A172 /* MKMapViewRepresentable.swift */; };
+		928DB5AA2D0E088B0094A172 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DB5A92D0E088B0094A172 /* Environment.swift */; };
 		92AB39BC2D06B9C400AD51BB /* MyMotivationPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39BB2D06B9C400AD51BB /* MyMotivationPalApp.swift */; };
 		92AB39BE2D06B9C400AD51BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39BD2D06B9C400AD51BB /* ContentView.swift */; };
 		92AB39C02D06B9C500AD51BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92AB39BF2D06B9C500AD51BB /* Assets.xcassets */; };
@@ -14,6 +38,13 @@
 		92AB39CD2D06B9C500AD51BB /* MyMotivationPalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39CC2D06B9C500AD51BB /* MyMotivationPalTests.swift */; };
 		92AB39D72D06B9C500AD51BB /* MyMotivationPalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39D62D06B9C500AD51BB /* MyMotivationPalUITests.swift */; };
 		92AB39D92D06B9C500AD51BB /* MyMotivationPalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39D82D06B9C500AD51BB /* MyMotivationPalUITestsLaunchTests.swift */; };
+		92AB39EA2D06BD5D00AD51BB /* HeartRateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39E92D06BD5D00AD51BB /* HeartRateData.swift */; };
+		92AB39ED2D06BD9700AD51BB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39EC2D06BD9700AD51BB /* Message.swift */; };
+		92AB39EF2D06BDCE00AD51BB /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39EE2D06BDCE00AD51BB /* HeartRateViewModel.swift */; };
+		92AB39F12D06BDF200AD51BB /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39F02D06BDF200AD51BB /* ChatViewModel.swift */; };
+		92AB39F32D06BE2A00AD51BB /* HeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39F22D06BE2A00AD51BB /* HeartRateView.swift */; };
+		92AB39F52D06BE5900AD51BB /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39F42D06BE5900AD51BB /* ChatView.swift */; };
+		92AB39FB2D06C24800AD51BB /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB39FA2D06C24800AD51BB /* BLEManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +65,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		928DB56B2D08F36B0094A172 /* DiscoveredDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredDevice.swift; sourceTree = "<group>"; };
+		928DB56D2D08F3BB0094A172 /* HeartRateDeviceSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateDeviceSelectionView.swift; sourceTree = "<group>"; };
+		928DB58A2D0A007D0094A172 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
+		928DB58C2D0A00E40094A172 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		928DB58E2D0A01060094A172 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		928DB5902D0A01270094A172 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		928DB5922D0A03000094A172 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		928DB5942D0A050D0094A172 /* AuthenticatedMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedMainView.swift; sourceTree = "<group>"; };
+		928DB5962D0A09E60094A172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		928DB5972D0A2B090094A172 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		928DB5992D0A2B1F0094A172 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		928DB59B2D0A2B390094A172 /* MotivatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorView.swift; sourceTree = "<group>"; };
+		928DB59D2D0A2B4F0094A172 /* PublicRunsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicRunsView.swift; sourceTree = "<group>"; };
+		928DB59F2D0AB1950094A172 /* RunViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewModel.swift; sourceTree = "<group>"; };
+		928DB5A12D0B91BA0094A172 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		928DB5A32D0CDF610094A172 /* ElevenLabsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenLabsService.swift; sourceTree = "<group>"; };
+		928DB5A52D0CDFB70094A172 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		928DB5A72D0DF6280094A172 /* MKMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewRepresentable.swift; sourceTree = "<group>"; };
+		928DB5A92D0E088B0094A172 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		92AB39B82D06B9C400AD51BB /* MyMotivationPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMotivationPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AB39BB2D06B9C400AD51BB /* MyMotivationPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMotivationPalApp.swift; sourceTree = "<group>"; };
 		92AB39BD2D06B9C400AD51BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +94,13 @@
 		92AB39D22D06B9C500AD51BB /* MyMotivationPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMotivationPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AB39D62D06B9C500AD51BB /* MyMotivationPalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMotivationPalUITests.swift; sourceTree = "<group>"; };
 		92AB39D82D06B9C500AD51BB /* MyMotivationPalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMotivationPalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		92AB39E92D06BD5D00AD51BB /* HeartRateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateData.swift; sourceTree = "<group>"; };
+		92AB39EC2D06BD9700AD51BB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		92AB39EE2D06BDCE00AD51BB /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateViewModel.swift; sourceTree = "<group>"; };
+		92AB39F02D06BDF200AD51BB /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		92AB39F22D06BE2A00AD51BB /* HeartRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateView.swift; sourceTree = "<group>"; };
+		92AB39F42D06BE5900AD51BB /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		92AB39FA2D06C24800AD51BB /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +108,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928DB5822D09FF590094A172 /* PostgREST in Frameworks */,
+				928DB5802D09FF590094A172 /* Functions in Frameworks */,
+				928DB5882D09FF590094A172 /* Supabase in Frameworks */,
+				928DB57E2D09FF590094A172 /* Auth in Frameworks */,
+				928DB5862D09FF590094A172 /* Storage in Frameworks */,
+				928DB5842D09FF590094A172 /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		928DB5892D0A006C0094A172 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				928DB58A2D0A007D0094A172 /* Supabase.swift */,
+				928DB5A92D0E088B0094A172 /* Environment.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		92AB39AF2D06B9C400AD51BB = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +166,12 @@
 		92AB39BA2D06B9C400AD51BB /* MyMotivationPal */ = {
 			isa = PBXGroup;
 			children = (
+				928DB5962D0A09E60094A172 /* Info.plist */,
+				928DB5892D0A006C0094A172 /* Helpers */,
+				92AB39E82D06BD3500AD51BB /* Services */,
+				92AB39E72D06BD2A00AD51BB /* Views */,
+				92AB39E62D06BD1800AD51BB /* ViewModels */,
+				92AB39E52D06BD0400AD51BB /* Models */,
 				92AB39BB2D06B9C400AD51BB /* MyMotivationPalApp.swift */,
 				92AB39BD2D06B9C400AD51BB /* ContentView.swift */,
 				92AB39BF2D06B9C500AD51BB /* Assets.xcassets */,
@@ -127,6 +205,57 @@
 			path = MyMotivationPalUITests;
 			sourceTree = "<group>";
 		};
+		92AB39E52D06BD0400AD51BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92AB39E92D06BD5D00AD51BB /* HeartRateData.swift */,
+				92AB39EC2D06BD9700AD51BB /* Message.swift */,
+				928DB56B2D08F36B0094A172 /* DiscoveredDevice.swift */,
+				928DB5902D0A01270094A172 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		92AB39E62D06BD1800AD51BB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				92AB39EE2D06BDCE00AD51BB /* HeartRateViewModel.swift */,
+				92AB39F02D06BDF200AD51BB /* ChatViewModel.swift */,
+				928DB59F2D0AB1950094A172 /* RunViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		92AB39E72D06BD2A00AD51BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92AB39F22D06BE2A00AD51BB /* HeartRateView.swift */,
+				92AB39F42D06BE5900AD51BB /* ChatView.swift */,
+				928DB56D2D08F3BB0094A172 /* HeartRateDeviceSelectionView.swift */,
+				928DB58C2D0A00E40094A172 /* AuthView.swift */,
+				928DB58E2D0A01060094A172 /* ProfileView.swift */,
+				928DB5922D0A03000094A172 /* RootView.swift */,
+				928DB5942D0A050D0094A172 /* AuthenticatedMainView.swift */,
+				928DB5972D0A2B090094A172 /* LoginView.swift */,
+				928DB5992D0A2B1F0094A172 /* MainTabView.swift */,
+				928DB59B2D0A2B390094A172 /* MotivatorView.swift */,
+				928DB59D2D0A2B4F0094A172 /* PublicRunsView.swift */,
+				928DB5A72D0DF6280094A172 /* MKMapViewRepresentable.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		92AB39E82D06BD3500AD51BB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				92AB39FA2D06C24800AD51BB /* BLEManager.swift */,
+				928DB5A12D0B91BA0094A172 /* OpenAIService.swift */,
+				928DB5A32D0CDF610094A172 /* ElevenLabsService.swift */,
+				928DB5A52D0CDFB70094A172 /* AudioPlayer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +272,14 @@
 			dependencies = (
 			);
 			name = MyMotivationPal;
+			packageProductDependencies = (
+				928DB57D2D09FF590094A172 /* Auth */,
+				928DB57F2D09FF590094A172 /* Functions */,
+				928DB5812D09FF590094A172 /* PostgREST */,
+				928DB5832D09FF590094A172 /* Realtime */,
+				928DB5852D09FF590094A172 /* Storage */,
+				928DB5872D09FF590094A172 /* Supabase */,
+			);
 			productName = MyMotivationPal;
 			productReference = 92AB39B82D06B9C400AD51BB /* MyMotivationPal.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +352,9 @@
 				Base,
 			);
 			mainGroup = 92AB39AF2D06B9C400AD51BB;
+			packageReferences = (
+				928DB57C2D09FF590094A172 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 92AB39B92D06B9C400AD51BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +397,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928DB5A82D0DF6280094A172 /* MKMapViewRepresentable.swift in Sources */,
 				92AB39BE2D06B9C400AD51BB /* ContentView.swift in Sources */,
+				928DB58B2D0A007D0094A172 /* Supabase.swift in Sources */,
+				928DB56E2D08F3BB0094A172 /* HeartRateDeviceSelectionView.swift in Sources */,
+				928DB58D2D0A00E40094A172 /* AuthView.swift in Sources */,
+				92AB39EF2D06BDCE00AD51BB /* HeartRateViewModel.swift in Sources */,
+				928DB59A2D0A2B1F0094A172 /* MainTabView.swift in Sources */,
+				92AB39F32D06BE2A00AD51BB /* HeartRateView.swift in Sources */,
+				92AB39ED2D06BD9700AD51BB /* Message.swift in Sources */,
+				928DB5A02D0AB1950094A172 /* RunViewModel.swift in Sources */,
+				92AB39F52D06BE5900AD51BB /* ChatView.swift in Sources */,
+				928DB5932D0A03000094A172 /* RootView.swift in Sources */,
+				928DB5952D0A050D0094A172 /* AuthenticatedMainView.swift in Sources */,
+				928DB5A62D0CDFB70094A172 /* AudioPlayer.swift in Sources */,
+				928DB56C2D08F36B0094A172 /* DiscoveredDevice.swift in Sources */,
+				928DB5912D0A01270094A172 /* Models.swift in Sources */,
+				928DB5982D0A2B090094A172 /* LoginView.swift in Sources */,
+				92AB39EA2D06BD5D00AD51BB /* HeartRateData.swift in Sources */,
+				92AB39F12D06BDF200AD51BB /* ChatViewModel.swift in Sources */,
+				92AB39FB2D06C24800AD51BB /* BLEManager.swift in Sources */,
+				928DB58F2D0A01060094A172 /* ProfileView.swift in Sources */,
+				928DB59C2D0A2B390094A172 /* MotivatorView.swift in Sources */,
+				928DB5AA2D0E088B0094A172 /* Environment.swift in Sources */,
+				928DB5A42D0CDF610094A172 /* ElevenLabsService.swift in Sources */,
+				928DB5A22D0B91BA0094A172 /* OpenAIService.swift in Sources */,
+				928DB59E2D0A2B4F0094A172 /* PublicRunsView.swift in Sources */,
 				92AB39BC2D06B9C400AD51BB /* MyMotivationPalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,8 +587,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyMotivationPal/Preview Content\"";
+				DEVELOPMENT_TEAM = HNFG4NYR62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMotivationPal/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,8 +620,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyMotivationPal/Preview Content\"";
+				DEVELOPMENT_TEAM = HNFG4NYR62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMotivationPal/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -582,6 +757,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		928DB57C2D09FF590094A172 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		928DB57D2D09FF590094A172 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928DB57C2D09FF590094A172 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		928DB57F2D09FF590094A172 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928DB57C2D09FF590094A172 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		928DB5812D09FF590094A172 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928DB57C2D09FF590094A172 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		928DB5832D09FF590094A172 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928DB57C2D09FF590094A172 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		928DB5852D09FF590094A172 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928DB57C2D09FF590094A172 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		928DB5872D09FF590094A172 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928DB57C2D09FF590094A172 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 92AB39B02D06B9C400AD51BB /* Project object */;
 }
