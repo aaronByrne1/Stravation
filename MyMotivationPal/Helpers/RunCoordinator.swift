@@ -13,19 +13,19 @@ class RunCoordinator: ObservableObject {
     }
 
     func updateRouteInSupabase(coordinates: [CLLocationCoordinate2D]) async {
-        guard let runID = currentRunID else { return }
+          guard let runID = currentRunID else { return }
 
-        let routeArray = coordinates.map { [$0.latitude, $0.longitude] }
-        do {
-            try await supabase
-                .from("runs")
-                .update(["route": routeArray])
-                .eq("id", value: runID.uuidString)
-                .execute()
+          let routeArray = coordinates.map { [$0.latitude, $0.longitude] }
+          do {
+              try await supabase
+                  .from("runs")
+                  .update(["route": routeArray])
+                  .eq("id", value: runID.uuidString)
+                  .execute()
 
-            print("Route updated in Supabase with \(routeArray.count) points.")
-        } catch {
-            print("Error updating route: \(error)")
-        }
-    }
+              print("Route updated in Supabase with \(routeArray.count) points.")
+          } catch {
+              print("Error updating route: \(error)")
+          }
+      }
 }

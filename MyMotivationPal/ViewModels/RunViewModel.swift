@@ -90,6 +90,6 @@ class RunViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Location error: \(error.localizedDescription)")
+        //print("Location error: \(error.localizedDescription)")
     }
 }

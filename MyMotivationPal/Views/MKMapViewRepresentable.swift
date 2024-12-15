@@ -24,21 +24,23 @@ struct RunningMapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MKMapView, context: Context) {
+        // Remove existing overlays
         uiView.removeOverlays(uiView.overlays)
 
         guard routeCoordinates.count > 1 else { return }
         let polyline = MKPolyline(coordinates: routeCoordinates, count: routeCoordinates.count)
         uiView.addOverlay(polyline)
 
-        if focusOnUserLocation {
-            // If focusing on user's location, rely on user tracking mode
-            // which is already set. We don't manually set region here.
-        } else {
-            // If focusing on runner’s coordinates, adjust the region to fit the route.
-            if let lastCoord = routeCoordinates.last {
-                let region = MKCoordinateRegion(center: lastCoord, latitudinalMeters: 500, longitudinalMeters: 500)
-                uiView.setRegion(region, animated: true)
+        if !focusOnUserLocation {
+            // Adjust the map region to fit the entire route
+            var mapRect = MKMapRect.null
+            for coord in routeCoordinates {
+                let point = MKMapPoint(coord)
+                mapRect = mapRect.union(MKMapRect(x: point.x, y: point.y, width: 0, height: 0))
             }
+
+            let edgePadding = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
+            uiView.setVisibleMapRect(mapRect, edgePadding: edgePadding, animated: true)
         }
     }
 

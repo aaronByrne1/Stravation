@@ -45,5 +45,5 @@ struct RunMessage: Decodable, Encodable, Identifiable {
     let run_id: UUID
     let sender: String
     let message: String
-    let timestamp: Date
+    let timestamp: String
 }

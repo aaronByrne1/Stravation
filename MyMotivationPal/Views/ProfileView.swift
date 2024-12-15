@@ -56,7 +56,7 @@ struct ProfileView: View {
             fullName = profile.fullName ?? ""
             website = profile.website ?? ""
         } catch {
-            print("Error loading profile: \(error)")
+            //print("Error loading profile: \(error)")
         }
     }
 
@@ -70,7 +70,7 @@ struct ProfileView: View {
                     .eq("id", value: user.id)
                     .execute()
             } catch {
-                print("Error updating profile: \(error)")
+                //print("Error updating profile: \(error)")
             }
         }
     }
