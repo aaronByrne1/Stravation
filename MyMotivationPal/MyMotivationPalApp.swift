@@ -4,6 +4,7 @@ import SwiftUI
 struct MyMotivationPalApp: App {
     @StateObject var bleManager = BLEManager()
     @StateObject var heartRateViewModel: HeartRateViewModel
+    @StateObject var supabaseRealtimeService = SupabaseRealtimeService() // Add SupabaseRealtimeService
 
     init() {
         let manager = BLEManager()
@@ -16,8 +17,7 @@ struct MyMotivationPalApp: App {
             RootView()
                 .environmentObject(bleManager)
                 .environmentObject(heartRateViewModel)
+                .environmentObject(supabaseRealtimeService) // Provide SupabaseRealtimeService
         }
     }
 }
-
-

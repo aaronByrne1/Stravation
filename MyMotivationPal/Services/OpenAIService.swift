@@ -1,10 +1,19 @@
 import Foundation
 
 class OpenAIService {
-    private let apiKey = "<Insert Key here>" // Replace with your API key
+    private let apiKey = "Insert key here" // Replace with your API key
     private let endpoint = "https://api.openai.com/v1/chat/completions"
     
-    func generateMotivationalScript(distance: String, desiredPace: String, currentPace: Double, heartRate: Int, tone: String, previousScript: String? = nil, completion: @escaping (String?) -> Void) {
+    func generateMotivationalScript(
+        distance: String,
+        desiredPace: String,
+        currentPace: Double,
+        heartRate: Int,
+        tone: String,
+        previousScript: String? = nil,
+        additionalInput: String? = nil,
+        completion: @escaping (String?) -> Void
+    ) {
         guard let url = URL(string: endpoint) else {
             print("Invalid URL")
             completion(nil)
@@ -27,6 +36,11 @@ class OpenAIService {
             userContent += "\n\nPrevious motivational script: \(prev)\n"
         } else {
             userContent += "\n\nNo previous script provided.\n"
+        }
+
+        // Include additional input if provided (e.g., recent audience messages)
+        if let additional = additionalInput, !additional.isEmpty {
+            userContent += "\n\nAdditional context:\n\(additional)\n"
         }
 
         let messages: [[String: String]] = [
@@ -82,7 +96,6 @@ class OpenAIService {
                    let choices = json["choices"] as? [[String: Any]],
                    let message = choices.first?["message"] as? [String: Any],
                    let content = message["content"] as? String {
-                    // Trim whitespace and ensure it doesn't end mid-sentence.
                     let script = content.trimmingCharacters(in: .whitespacesAndNewlines)
                     completion(script)
                 } else {

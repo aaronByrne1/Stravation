@@ -1,16 +1,24 @@
 import SwiftUI
 
 struct PublicRunsView: View {
+    @EnvironmentObject var realtimeService: SupabaseRealtimeService
+    @State private var selectedRunID: UUID?
+
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Public Runs will appear here in real-time.")
-                    .padding()
-                
-                Text("Users can see HR data, pace, and send messages.")
-                    .padding()
+            List(realtimeService.activeRuns) { run in
+                NavigationLink(destination: RunDetailView(runID: run.id), tag: run.id, selection: $selectedRunID) {
+                    VStack(alignment: .leading) {
+                        Text("Run ID: \(run.id.uuidString.prefix(8))...")
+                        Text("Started: \(run.start_time)")
+                            .font(.subheadline)
+                    }
+                }
             }
             .navigationTitle("Public Runs")
+            .onAppear {
+                realtimeService.loadActiveRuns()
+            }
         }
     }
 }

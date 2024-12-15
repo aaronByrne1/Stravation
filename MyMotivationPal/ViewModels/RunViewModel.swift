@@ -11,6 +11,9 @@ class RunViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     private var previousLocation: CLLocation?
     var runStartTime: Date?
+    
+    var routeUpdateHandler: (([CLLocationCoordinate2D]) -> Void)?
+
 
     override init() {
         super.init()
@@ -75,6 +78,9 @@ class RunViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 
                 // Append this coordinate to the route
                 routeCoordinates.append(location.coordinate)
+                
+                routeUpdateHandler?(routeCoordinates)
+
             }
         } else {
             // First valid location
