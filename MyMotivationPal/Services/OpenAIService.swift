@@ -1,7 +1,7 @@
 import Foundation
 
 class OpenAIService {
-    private let apiKey = "Insert key here" // Replace with your API key
+    private let apiKey = "Insert your OpenAI API Key" // Replace with your API key
     private let endpoint = "https://api.openai.com/v1/chat/completions"
     
     func generateMotivationalScript(
@@ -25,28 +25,18 @@ class OpenAIService {
         // Build the user prompt
         // Include instructions to keep it short and ensure it doesn't end mid-sentence.
         var userContent = """
-        The user is running a \(distance)-kilometer race with a desired pace of \(desiredPace) minutes per kilometer. They are currently running at \(String(format: "%.2f", currentPace)) minutes per kilometer with a heart rate of \(heartRate) bpm.
+        The runner is targeting a pace of \(desiredPace) minutes per kilometer over a distance of \(distance) kilometers. They are currently running at a pace of \(String(format: "%.2f", currentPace)) minutes per kilometer, with a heart rate of \(heartRate) bpm.
 
-        Generate a \(tone) motivational script. The script should be short (about 2-3 sentences), clearly finished, and should not end mid-sentence. End the script naturally and do not trail off. If this is the first script, provide an inspiring introduction. If a previous script is provided, follow it up in a way that feels continuous and relevant.
+        Supporter messages:
+        \(additionalInput ?? "No messages yet.").
 
-        Only return the motivational script without extra text.
+        Generate a motivational script that is funny, harsh, and motivating. Include the runner's heart rate, current pace, target pace, target distance, and supporter messages naturally in the text. Ensure the script is dynamic and unique each time. Keep it no more than 6 sentences.
         """
-
-        if let prev = previousScript, !prev.isEmpty {
-            userContent += "\n\nPrevious motivational script: \(prev)\n"
-        } else {
-            userContent += "\n\nNo previous script provided.\n"
-        }
-
-        // Include additional input if provided (e.g., recent audience messages)
-        if let additional = additionalInput, !additional.isEmpty {
-            userContent += "\n\nAdditional context:\n\(additional)\n"
-        }
 
         let messages: [[String: String]] = [
             [
                 "role": "system",
-                "content": "You are a motivational running coach. Always produce a complete, coherent script that ends properly."
+                "content": "You are a motivational running coach. Your tone is funny, harsh, and inspiring. Always include the runner's heart rate, current pace, desired pace, target distance, and supporter messages in your script."
             ],
             [
                 "role": "user",
@@ -57,9 +47,12 @@ class OpenAIService {
         let parameters: [String: Any] = [
             "model": "gpt-3.5-turbo",
             "messages": messages,
-            "max_tokens": 75,
-            "temperature": 0.7
+            "max_tokens": 200, // Increased token limit for a richer response
+            "temperature": 0.8 // Slightly increased randomness for varied results
         ]
+
+
+
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

@@ -7,7 +7,7 @@ class Environment {
 
     private init() {
         guard let path = Bundle.main.path(forResource: ".env", ofType: nil) else {
-            //print("No .env file found")
+            print("No .env file found")
             return
         }
         
@@ -22,14 +22,14 @@ class Environment {
                     let value = parts[1].trimmingCharacters(in: .whitespacesAndNewlines)
                     variables[key] = value
                 }
-                //print("Loaded .env values:")
+                print("Loaded .env values:")
                 for (key, value) in variables {
-                    //print("\(key): \(value)")
+                    print("\(key): \(value)")
                 }
 
             }
         } catch {
-            //print("Failed to load .env file: \(error.localizedDescription)")
+            print("Failed to load .env file: \(error.localizedDescription)")
         }
     }
 

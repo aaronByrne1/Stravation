@@ -1,7 +1,7 @@
 import Foundation
 
 class ElevenLabsService {
-    private let apiKey = "<Insert Key here>" // Replace with your actual API key
+    private let apiKey = "Insert your Eleven Labs API Key" // Replace with your actual API key
     private let voiceID = "CA5Yl0Vmw08Q59GgjVyW" // Replace with a valid Eleven Labs voice ID
     private let endpoint = "https://api.elevenlabs.io/v1/text-to-speech"
     

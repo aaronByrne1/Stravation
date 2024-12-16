@@ -13,7 +13,7 @@ struct MotivatorView: View {
     @State private var selectedDeviceIndex: Int? = nil
     @State private var desiredDistance = ""
     @State private var desiredPace = ""
-    @State private var motivationalScript = "Your motivator will start speaking soon!"
+    @State private var motivationalScript = ""
     @State private var isRunStarted = false
     @State private var previousScript = ""
     @State private var runTimer: Timer?
@@ -166,7 +166,7 @@ struct MotivatorView: View {
                                 .eq("id", value: runID.uuidString)
                                 .execute()
                         } catch {
-                            //print("Error updating run to inactive: \(error)")
+                            print("Error updating run to inactive: \(error)")
                         }
                     }
                 }
@@ -212,9 +212,9 @@ struct MotivatorView: View {
                     let run = try JSONDecoder().decode(Run.self, from: response.data)
                     runCoordinator.startRun(runID: run.id)
                     currentRunID=run.id
-                    //print("New run created with id: \(run.id)")
+                    print("New run created with id: \(run.id)")
                 } catch {
-                    //print("Decoding Error: \(error)")
+                    print("Decoding Error: \(error)")
                 }
                 
                 // Bind route updates to RunCoordinator
@@ -236,17 +236,17 @@ struct MotivatorView: View {
                     }
                 }
                 
-                fetchMotivationalScript()
+//                fetchMotivationalScript()
                 
                 // Fetch script every 30 seconds
-                Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { _ in
+                Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { _ in
                     if self.isRunStarted {
                         self.fetchMotivationalScript()
                     }
                 }
                 
             } catch {
-                //print("Error inserting run: \(error)")
+                print("Error inserting run: \(error)")
             }
         }
     }
@@ -265,9 +265,9 @@ struct MotivatorView: View {
                 .eq("id", value: runID.uuidString)
                 .execute()
 
-            //print("Route updated in Supabase with \(routeArray.count) points.")
+            print("Route updated in Supabase with \(routeArray.count) points.")
         } catch {
-            //print("Error updating route: \(error)")
+            print("Error updating route: \(error)")
         }
     }
 
@@ -275,7 +275,7 @@ struct MotivatorView: View {
 
     func fetchMotivationalScript() {
         guard let runID = currentRunID else {
-            //print("No run ID yet. Cannot fetch messages.")
+            print("No run ID yet. Cannot fetch messages.")
             return // No run ID yet
         }
 
@@ -283,29 +283,33 @@ struct MotivatorView: View {
             do {
                 let response = try await supabase
                     .from("run_messages")
-                    .select("message")
+                    .select("sender, message") // Include both sender and message
                     .eq("run_id", value: runID.uuidString)
                     .order("timestamp", ascending: false)
                     .limit(5)
                     .execute()
 
                 // Debugging the raw response
-                //print("Raw response: \(String(data: response.data, encoding: .utf8) ?? "No readable data")")
+                print("Raw response: \(String(data: response.data, encoding: .utf8) ?? "No readable data")")
 
                 var recentMessages = ""
                 if let msgs = try? JSONDecoder().decode([[String: String]].self, from: response.data) {
-                    let messageTexts = msgs.compactMap { $0["message"] }
+                    let messageTexts = msgs.compactMap { msg -> String? in
+                        if let sender = msg["sender"], let message = msg["message"] {
+                            return "\(sender): \(message)"
+                        }
+                        return nil
+                    }
                     if messageTexts.isEmpty {
-                        //print("No recent messages found for run ID: \(runID)")
                         recentMessages = "No messages yet."
                     } else {
                         recentMessages = messageTexts.joined(separator: "\n")
-                        //print("Recent messages: \(messageTexts)")
+                        print("Recent messages: \(messageTexts)")
                     }
                 } else {
-                    //print("Failed to decode messages from response.")
                     recentMessages = "No messages yet."
                 }
+
 
                 openAIService.generateMotivationalScript(
                     distance: desiredDistance,
@@ -314,20 +318,20 @@ struct MotivatorView: View {
                     heartRate: heartRateViewModel.heartRateData.currentHR,
                     tone: "funny and harsh",
                     previousScript: previousScript,
-                    additionalInput: "Recent audience messages: \n\(recentMessages)\n"
+                    additionalInput: recentMessages
                 ) { script in
                     DispatchQueue.main.async {
                         if let script = script {
                             self.previousScript = self.motivationalScript
                             self.motivationalScript = script
-                            //self.speakScript(script)
+                            self.speakScript(script)
                         } else {
                             self.motivationalScript = "No script generated. Keep going!"
                         }
                     }
                 }
             } catch {
-                //print("Error fetching recent messages: \(error)")
+                print("Error fetching recent messages: \(error)")
             }
         }
     }
@@ -336,7 +340,7 @@ struct MotivatorView: View {
     func speakScript(_ script: String) {
         elevenLabsService.generateSpeech(script: script) { audioData in
             guard let audioData = audioData else {
-                //print("Failed to get audio from Eleven Labs")
+                print("Failed to get audio from Eleven Labs")
                 return
             }
             DispatchQueue.main.async {

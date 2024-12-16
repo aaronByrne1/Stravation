@@ -27,9 +27,9 @@ struct PublicRunsView: View {
     private func fetchCurrentUserName() {
         Task {
             do {
-                //print("Fetching current user...")
+                print("Fetching current user...")
                 let user = try await supabase.auth.user()
-                //print("User fetched: \(user)")
+                print("User fetched: \(user)")
 
                 let response = try await supabase
                     .from("profiles")
@@ -38,19 +38,19 @@ struct PublicRunsView: View {
                     .single()
                     .execute()
 
-                //print("Profile response: \(String(data: response.data, encoding: .utf8) ?? "No readable data")")
+                print("Profile response: \(String(data: response.data, encoding: .utf8) ?? "No readable data")")
 
                 if let profile = try? JSONDecoder().decode([String: String].self, from: response.data),
                    let name = profile["full_name"] {
                     DispatchQueue.main.async {
                         self.currentUserName = name
                     }
-                    //print("User name fetched: \(name)")
+                    print("User name fetched: \(name)")
                 } else {
-                    //print("Failed to decode user's full_name from profile response.")
+                    print("Failed to decode user's full_name from profile response.")
                 }
             } catch {
-                //print("Error fetching user or profile: \(error)")
+                print("Error fetching user or profile: \(error)")
             }
         }
     }
