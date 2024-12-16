@@ -137,10 +137,6 @@ We love contributions from the community! Here's how you can help:
 
 _Please ensure your code follows our coding standards and passes all tests before submitting a pull request._
 
-## 📄 License
-
-This project is licensed under the [MIT License](https://chatgpt.com/c/LICENSE). 🖍️
-
 ## 🙏 Acknowledgements
 
 - [Supabase](https://supabase.com/) for providing the real-time backend services.
