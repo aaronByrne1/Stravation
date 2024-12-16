@@ -2,7 +2,7 @@
 
 **_A play on words between Strava and Motivation_**
 
-![Stravation Banner](https://via.placeholder.com/800x200.png?text=Stravation+Banner)
+![Stravation Banner](./Stravation.jpeg)
 
 Welcome to **Stravation**, the ultimate app that combines the power of **AI**, **Supabase Realtime**, and **BLE fitness wearables** to keep you motivated during your runs! 🏃‍♂️💨 Whether you're tackling an endurance event or just enjoying a morning jog, Stravation ensures you stay encouraged every step of the way. 🎉
 
@@ -36,7 +36,7 @@ Before you begin, ensure you have met the following requirements:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/stravation.git
+   git clone https://github.com/aaronByrne1/Stravation.git
    cd stravation
    ```
 
@@ -56,7 +56,7 @@ Before you begin, ensure you have met the following requirements:
    private let apiKey = "your_api_key_here" // Replace with your actual API key
    ```
 
-   > **ℹ️ Note:** Never commit your API keys to version control to keep them secure!
+   > **ℹ️ Note:** Never commit your API keys to version control to keep them secure! I have commited my Supabase to let anyone easily use the app. Proabaly not smart.
 
 4. **Open the Project**
 
@@ -79,7 +79,7 @@ Before you begin, ensure you have met the following requirements:
 2.  **Authenticate** 🔐
 
     Sign in with aaronbyrne056@gmail.com or aabyrne@tcd.ie.
-    Password is Password
+    Password is 'Password'
 
 3.  **Pair Your Wearable** ❤️
 
